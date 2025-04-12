@@ -3,12 +3,12 @@ layout: home
 sidebar: false
 
 title: Xyea
-titleTemplate: 写下我想说的，记录我想记得的
+titleTemplate: 始于足下，思于内心，书于此地。 
 
 hero:
   name: Xyea
-  text: 写下我想说的，记录我想记得的
-  tagline: 「Xyea」是我给这个世界的一封长期书信。它来自一段旅程，一段思考，一个持续书写的我。
+  text: 始于足下，思于内心，书于此地。 
+  tagline: From unknown X to the 'aha!' Yea.
   image:
     src: /logo.svg
     alt: Xyea Logo
