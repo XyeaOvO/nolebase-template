@@ -168,7 +168,7 @@ const ExtendedTheme: Theme = {
         'en-US': 'en'                  // 网站使用 'en-US' 时，Giscus 使用 'en'
       },
 
-      homePageShowComment: false,       // 【保留】是否在主页显示评论区，默认为 false
+      homePageShowComment: true,       // 【保留】是否在主页显示评论区，默认为 false
 
       // 主题设置
       // 注意：<script> 标签使用的是 data-theme="preferred_color_scheme"（自动根据系统主题切换）
