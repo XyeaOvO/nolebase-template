@@ -1,13 +1,13 @@
-# 在 dash.js 中添加自定义 ABR 规则
+# 在 dash.js 5.0.1 中添加自定义 ABR 规则
 
-本文将指导如何在 dash.js 项目中添加一个全新的、自定义的 ABR 规则。为了清晰地展示集成过程，我们将添加一个名为 `Bba0Rule` 的“伪规则”（Fake Rule）。这个规则的逻辑——按顺序循环切换可用的视频码率——并没有实现真正的BBA0算法。
+本文将指导如何在 dash.js 项目中添加一个全新的、自定义的 ABR 规则。为了清晰地展示集成过程，我们将添加一个名为 `Bba0Rule` 的“伪规则”（Fake Rule）。即这个规则的逻辑（按顺序循环切换可用的视频码率）并没有实现真正的BBA0算法。
 
 **修改概览：**
 
 *   **新增核心规则文件:** `src/streaming/rules/abr/Bba0Rule.js`
 *   **注册规则:** 修改 `ABRRulesCollection.js` 以识别和创建新规则实例。
 *   **添加配置:** 修改 `Settings.js` 以允许启用/禁用新规则，并提供默认配置。
-*   **前端UI 集成:** 在参考播放器 (`samples/dash-if-reference-player/`) 中添加复选框以控制规则的激活状态。
+*   **前端 UI 集成:** 在参考播放器 (`samples/dash-if-reference-player/`) 中添加复选框以控制规则的激活状态。
 
 ### 第一步：创建新的规则文件 (`Bba0Rule.js`)
 
@@ -331,3 +331,9 @@ export default FactoryMaker.getClassFactory(Bba0Rule);
         ```
 
 ### 第五步：测试结果
+
+只在`Options`里面只勾选`Bba0Rule`，可以看到视频的码率档位从最低1档逐渐加到10档再回落，符合预期结果。
+
+![](Pic/截图%202025-04-14%2019-07-22.png)
+
+![](Pic/截图%202025-04-14%2019-04-12.png)
