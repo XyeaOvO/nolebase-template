@@ -139,7 +139,7 @@ export default FactoryMaker.getClassFactory(Bba0Rule);
 
 2.  **在初始化时将其添加到规则列表:** 在 `initialize` 函数中，确保新规则被考虑到。虽然这个 commit 的 diff 没有直接显示添加，但通常你会把它加入某个规则列表（例如 `qualitySwitchRules`）的处理逻辑中，或者像 diff 中那样，在 `initialize` 函数内部直接调用 `_handleRuleUpdate` 来处理它：
     ```javascript
-    function initialize() {
+    function _updateRules() {
         // ... 其他规则的处理 ...
         qualitySwitchRules = _handleRuleUpdate('Bba0Rule', qualitySwitchRules); // <--- 添加这一行或类似逻辑
         // ...
@@ -221,7 +221,7 @@ export default FactoryMaker.getClassFactory(Bba0Rule);
     ```javascript
     // src/core/Settings.js
     // 在 settingsEvents 对象中添加新规则的 active 状态路径
-    const settingsEvents = {
+    const DISPATCH_KEY_MAP = {
         // ... 其他配置路径 ...
         'streaming.abr.rules.bolaRule.active': Events.SETTING_UPDATED_ABR_ACTIVE_RULES,
         'streaming.abr.rules.bba0Rule.active': Events.SETTING_UPDATED_ABR_ACTIVE_RULES, // <--- 添加此行
