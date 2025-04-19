@@ -137,7 +137,7 @@ export default FactoryMaker.getClassFactory(Bba0Rule);
     import Bba0Rule from './Bba0Rule.js';
     ```
 
-2.  **在初始化时将其添加到规则列表:** 在 `initialize` 函数中，确保新规则被考虑到。虽然这个 commit 的 diff 没有直接显示添加，但通常你会把它加入某个规则列表（例如 `qualitySwitchRules`）的处理逻辑中，或者像 diff 中那样，在 `initialize` 函数内部直接调用 `_handleRuleUpdate` 来处理它：
+2.  **在初始化时将其添加到规则列表:** 
     ```javascript
     function _updateRules() {
         // ... 其他规则的处理 ...
@@ -150,7 +150,7 @@ export default FactoryMaker.getClassFactory(Bba0Rule);
 
 3.  **在规则创建函数 (`_createRule`) 中添加 case:** 这个内部函数负责实际创建规则实例。你需要为你的新规则添加一个 `case` 分支：
     ```javascript
-    function _createRule(ruleName) {
+    function _createRuleInstance(ruleName) {
         switch (ruleName) {
             // ... 其他规则的 case ...
             case 'BolaRule':
